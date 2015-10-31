@@ -1,0 +1,19 @@
+<ion-view view-title="{{'TABS_LIST' | translate}}">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear" ui-sref="tab.list-choose" translate>
+      CHOOSE
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="has-subheader">
+    <ion-list show-delete="lc.ui.showDelete" can-swipe="listCanSwipe">
+      <ion-item ng-repeat="item in lc.list" ng-click="lc.editItem(item, $index)" class="item-remove-animate item-add-animate">
+        {{item.label}}
+        <ion-option-button class="button-info" ng-click="lc.editItem(item, $index)">
+          Edit
+        </ion-option-button>
+        <ion-delete-button class="ion-minus-circled" ng-click="lc.deleteItem($index)">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
