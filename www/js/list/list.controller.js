@@ -5,26 +5,13 @@
     .controller('ListCtrl', ListCtrl);
 
   /** @ngInject */
-  function ListCtrl() {
+  function ListCtrl(ListStorage) {
     var vm = this;
     vm.ui = {
       editMode: false,
       showDelete: false
     };
-    vm.list = [
-      {
-        label: 'Vano'
-      },
-      {
-        label: 'Belo'
-      },
-      {
-        label: 'Anthony'
-      },
-      {
-        label: 'Giulia'
-      }
-    ];
+    vm.list = [];
     vm.selectedItem = null;
     vm.newItem = '';
 
@@ -34,12 +21,19 @@
     vm.endEdit = endEdit;
     vm.addItem = addItem;
 
+    onStart();
+
+    function onStart() {
+      vm.list = ListStorage.query();
+    }
+
     function toggleDelete() {
       vm.ui.showDelete = !vm.ui.showDelete;
     }
 
     function deleteItem(index) {
       vm.list.splice(index, 1);
+      saveList();
     }
 
     function editItem(item, index) {
@@ -50,14 +44,22 @@
     function endEdit() {
       vm.ui.editMode = false;
       vm.selectedItem = null;
+      saveList();
+    }
+
+    function saveList() {
+      ListStorage.post(vm.list);
     }
 
     function addItem() {
-      vm.list.push({
-        label: vm.newItem
-      });
+      if (vm.newItem != '') {
+        vm.list.push({
+          label: vm.newItem
+        });
 
-      vm.newItem = '';
+        vm.newItem = '';
+        saveList();
+      }
     }
   }
 })();

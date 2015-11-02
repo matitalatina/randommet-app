@@ -1,4 +1,4 @@
-/* global toastr:false, moment:false, _:false */
+/* global toastr:false, moment:false, _:false, particlesJS:false */
 (function () {
   'use strict';
 
@@ -6,6 +6,11 @@
     .module('randommet')
     //.constant('toastr', toastr)
     //.constant('moment', moment)
-    .constant('_', _);
+    .constant('particlesJS', particlesJS)
+    .constant('_', _)
+    .constant('BACKEND', {
+      //API: 'http://localhost:9010',
+      API: 'http://192.168.2.35:9010'
+    });;
 
 })();

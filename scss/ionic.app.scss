@@ -16,13 +16,111 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
+$ionicons-font-path: "../fonts" !default;
+$fa-font-path: "../fonts";
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+.bar-stable .button.assertive {
+  color: $assertive;
+}
+
 .item-add-animate.ng-enter {
-  animation: zoomInLeft 0.5s;
+  animation: fadeIn 0.5s;
 }
 
 .item-add-animate.ng-enter-stagger {
   animation-delay: 0.05s;
+}
+
+.anim-zoom.ng-hide-add {
+  animation: zoomOut 0.5s;
+}
+
+.anim-zoom.ng-hide-remove {
+  animation: zoomIn 0.5s;
+  opacity: 1;
+}
+
+.anim-zoom.ng-hide-add-active {
+  //opacity: 0;
+}
+
+.anim-zoom.ng-hide-remove-active {
+  opacity: 0;
+}
+
+@-webkit-keyframes throb {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes throb {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+[data-sr] {
+  visibility: hidden;
+}
+
+.icon-ultra {
+  font-size: 100px;
+  line-height: 1.1em;
+}
+
+.filler-center {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.about {
+  font-size: 30px;
+  line-height: 1em;
+  .title-randommet {
+    font-size: 50px;
+    margin-bottom: 20px;
+    line-height: 1.3em;
+  }
+}
+
+.about-bg {
+  background: radial-gradient(#335565, #203340);
+  color: rgba(255, 255, 255, 1);
+}
+
+.dark-magic {
+  background: radial-gradient(#1f285f 60%, #182361);
+  color: white;
+}
+
+.heart-anim {
+  -webkit-animation: throb 1.33s ease-in-out infinite;
+  animation: throb 1.33s ease-in-out infinite;
+}
+
+.chosen-label {
+  font-size: 40px;
+  line-height: 45px;
+  text-align: center;
 }

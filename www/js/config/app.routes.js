@@ -39,6 +39,36 @@
       }
     })
 
+    .state('tab.answer', {
+      url: '/answer',
+      views: {
+        'tab-answer': {
+          templateUrl: 'js/answer/answer.html',
+          controller: 'AnswerCtrl as ac'
+        }
+      }
+    })
+
+    .state('tab.settings', {
+      url: '/settings',
+      views: {
+        'tab-settings': {
+          templateUrl: 'js/settings/settings.html',
+          controller: 'SettingsCtrl as sc'
+        }
+      }
+    })
+
+    .state('tab.about', {
+      url: '/about',
+      views: {
+        'tab-settings': {
+          templateUrl: 'js/about/about.html',
+          controller: 'AboutCtrl as ac'
+        }
+      }
+    })
+
     .state('tab.chats', {
         url: '/chats',
         views: {

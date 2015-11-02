@@ -5,59 +5,22 @@
     .controller('ListChooseCtrl', ListChooseCtrl);
 
   /** @ngInject */
-  function ListChooseCtrl() {
+  function ListChooseCtrl(ListStorage, ListRandom, _, $scope) {
     var vm = this;
-    vm.ui = {
-      editMode: false,
-      showDelete: false
-    };
-    vm.list = [
-      {
-        label: 'Vano'
-      },
-      {
-        label: 'Belo'
-      },
-      {
-        label: 'Anthony'
-      },
-      {
-        label: 'Giulia'
-      }
-    ];
-    vm.selectedItem = null;
-    vm.newItem = '';
+    vm.list = null;
+    vm.chooserControl = {};
+    vm.onChooserStart = choose;
+    vm.choose = choose;
 
-    vm.toggleDelete = toggleDelete;
-    vm.deleteItem = deleteItem;
-    vm.editItem = editItem;
-    vm.endEdit = endEdit;
-    vm.addItem = addItem;
+    $scope.$on('$ionicView.beforeEnter', onStart);
 
-    function toggleDelete() {
-      vm.ui.showDelete = !vm.ui.showDelete;
+    function onStart() {
+      vm.list = ListStorage.query();
     }
 
-    function deleteItem(index) {
-      vm.list.splice(index, 1);
-    }
-
-    function editItem(item, index) {
-      vm.ui.editMode = true;
-      vm.selectedItem = item;
-    }
-
-    function endEdit() {
-      vm.ui.editMode = false;
-      vm.selectedItem = null;
-    }
-
-    function addItem() {
-      vm.list.push({
-        label: vm.newItem
-      });
-
-      vm.newItem = '';
+    function choose() {
+      var label = ListRandom.choose(vm.list).label;
+      vm.chooserControl.show(label);
     }
   }
 })();

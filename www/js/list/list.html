@@ -4,7 +4,7 @@
       <i class="icon"></i>
       <input type="text" placeholder="{{'TABS_ITEM_NEW_PLACEHOLDER' | translate}}" ng-model="lc.newItem" ng-enter="lc.addItem()">
     </label>
-    <button class="button button-icon icon ion-ios-plus-outline" type="button" ng-click="lc.addItem()">
+    <button class="button button-icon icon ion-ios-plus-outline" type="button" ng-click="lc.addItem()" ng-disabled="!lc.newItem">
     </button>
   </form>
   <form class="bar bar-subheader item-input-inset" ng-if="lc.ui.editMode" ng-submit="lc.endEdit()">
@@ -15,21 +15,20 @@
     <button class="button button-icon icon ion-ios-checkmark-outline" ng-click="lc.endEdit()" type="button">
     </button>
   </form>
-  <ion-nav-buttons side="primary">
-    <button class="button button-icon icon ion-ios-minus-outline" ng-click="lc.toggleDelete()">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-minus-outline" ng-class="{'assertive': lc.ui.showDelete}" ng-click="lc.toggleDelete()">
     </button>
   </ion-nav-buttons>
-  <ion-nav-buttons side="secondary">
-    <button class="button button-clear" ui-sref="tab.list-choose" translate>
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-positive" ui-sref="tab.list-choose" translate>
       CHOOSE
     </button>
   </ion-nav-buttons>
   <ion-content class="has-subheader">
-    <ion-list show-delete="lc.ui.showDelete" can-swipe="listCanSwipe">
+    <ion-list show-delete="lc.ui.showDelete" can-swipe="true">
       <ion-item ng-repeat="item in lc.list" ng-click="lc.editItem(item, $index)" class="item-remove-animate item-add-animate">
         {{item.label}}
-        <ion-option-button class="button-info" ng-click="lc.editItem(item, $index)">
-          Edit
+        <ion-option-button class="button-assertive icon ion-trash-a" ng-click="lc.deleteItem($index)">
         </ion-option-button>
         <ion-delete-button class="ion-minus-circled" ng-click="lc.deleteItem($index)">
         </ion-delete-button>

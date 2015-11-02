@@ -8,11 +8,16 @@
 angular.module('randommet', [
   'ionic',
   'ngAnimate',
+  'ngResource',
+  'LocalStorageModule',
   'randommet.controllers',
+  'randommet.answer',
   'randommet.services',
   'randommet.i18n',
   'randommet.components',
-  'randommet.list'
+  'randommet.list',
+  'randommet.settings',
+  'randommet.about'
 ])
 
 .run(function ($ionicPlatform) {

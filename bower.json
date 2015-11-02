@@ -8,6 +8,8 @@
     "font-awesome": "~4.4.0",
     "animate.css": "~3.4.0",
     "angular-translate": "~2.8.1",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "angular-local-storage": "~0.2.3",
+    "particles.js": "~2.0.0"
   }
 }
