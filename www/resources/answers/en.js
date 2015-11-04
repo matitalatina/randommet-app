@@ -1,6 +1,5 @@
 [{"label": "Signs point to yes."},
 {"label": "Yes."},
-{"label": "Reply hazy, try again."},
 {"label": "Without a doubt."},
 {"label": "My sources say no."},
 {"label": "As I see it, yes."},

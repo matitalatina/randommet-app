@@ -1,10 +1,13 @@
-<ion-view view-title="{{'TABS_ANSWER_TITLE' | translate}}">
+<ion-view>
+  <ion-nav-title>
+    {{'TABS_ANSWER_TITLE' | translate}} · <i class="icon ion-android-refresh"></i> {{ac.ui.countNumber}}
+  </ion-nav-title>
   <ion-nav-buttons side="secondary">
     <button class="button button-clear button-positive" ng-click="ac.choose()" translate>
       ANSWER_ASK
     </button>
   </ion-nav-buttons>
   <ion-content scroll="false" rm-particles class="dark-magic">
-    <rm-chooser-label data-control="ac.chooserControl" on-start="ac.onChooserStart"></rm-chooser-label>
+    <rm-chooser-label data-control="ac.chooserControl"></rm-chooser-label>
   </ion-content>
 </ion-view>

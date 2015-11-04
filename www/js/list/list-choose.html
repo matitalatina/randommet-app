@@ -1,4 +1,7 @@
-<ion-view view-title="{{'LIST_CHOOSE_TITLE' | translate}}">
+<ion-view>
+  <ion-nav-title>
+    {{'LIST_CHOOSE_TITLE' | translate}} · <i class="icon ion-android-refresh"></i> {{lcc.ui.countNumber}}
+  </ion-nav-title>
   <ion-nav-buttons side="secondary">
     <button class="button button-clear button-positive" ng-click="lcc.choose()" translate>
       LIST_CHOOSE_RECHOOSE

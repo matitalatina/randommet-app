@@ -13,7 +13,7 @@
       TABS_ANSWER: 'Oracolo',
       TABS_SETTINGS: 'Impostazioni',
       TABS_ANSWER_TITLE: 'Oracolo',
-      ANSWER_ASK: 'Domanda',
+      ANSWER_ASK: 'Rispondi',
       CHOOSE: 'Scegli',
       LIST_CHOOSE_TITLE: 'Scelta',
       LIST_CHOOSE_RECHOOSE: 'Riscegli',

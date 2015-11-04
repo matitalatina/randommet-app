@@ -5,8 +5,10 @@
     .controller('ListCtrl', ListCtrl);
 
   /** @ngInject */
-  function ListCtrl(ListStorage) {
+  function ListCtrl(ListStorage, Counter) {
     var vm = this;
+    var counterId = 'list';
+    
     vm.ui = {
       editMode: false,
       showDelete: false
@@ -48,7 +50,12 @@
     }
 
     function saveList() {
+      resetCounter();
       ListStorage.post(vm.list);
+    }
+    
+    function resetCounter() {
+      Counter.reset(counterId);
     }
 
     function addItem() {

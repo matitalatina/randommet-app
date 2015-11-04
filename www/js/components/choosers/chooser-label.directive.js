@@ -39,13 +39,19 @@
       onStart();
 
       function onStart() {
+        addControls();
+
+        if (vm.onStart) {
+          vm.onStart();
+        }
+      }
+
+      function addControls() {
         vm.internalControl.show = _.throttle(show, animationTime, {
           leading: true,
           trailing: false
         });
-        if (vm.onStart) {
-          vm.onStart();
-        }
+        vm.internalControl.reset = reset;
       }
 
       function show(label) {
@@ -55,6 +61,11 @@
 
         post.label = label;
         vm.selection.inverted = !inverted;
+      }
+
+      function reset() {
+        vm.selection.pre.label = '';
+        vm.selection.post.label = '';
       }
 
     }
