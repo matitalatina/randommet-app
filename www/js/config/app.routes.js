@@ -30,7 +30,7 @@
     })
 
     .state('tab.list-choose', {
-      url: '/list',
+      url: '/list-choose',
       views: {
         'tab-list': {
           templateUrl: 'js/list/list-choose.html',

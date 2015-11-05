@@ -9,6 +9,7 @@ angular.module('randommet', [
   'ionic',
   'ngAnimate',
   'ngResource',
+  'ngIOS9UIWebViewPatch',
   'LocalStorageModule',
   'randommet.controllers',
   'randommet.answer',

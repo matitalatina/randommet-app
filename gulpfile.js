@@ -131,8 +131,8 @@ gulp.task('build:manifest', ['clean', 'sass', 'build:merge', 'build:templates', 
         'fonts/ionicons.ttf fonts/ionicons.ttf',
         'fonts/ionicons.woff fonts/ionicons.woff'
       ],
-      filename: 'cache.manifest',
-      exclude: 'cache.manifest'
+      filename: 'cache.appcache',
+      exclude: 'cache.appcache'
     }))
     .pipe(gulp.dest(paths.dist.root));
 });
