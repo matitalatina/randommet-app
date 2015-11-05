@@ -1,4 +1,4 @@
-/* global toastr:false, moment:false, _:false, particlesJS:false */
+/* global toastr:false, moment:false, _:false, particlesJS:false, navigator: false */
 (function () {
   'use strict';
 
@@ -6,6 +6,7 @@
     .module('randommet')
     //.constant('toastr', toastr)
     //.constant('moment', moment)
+    .constant('navigator', navigator)
     .constant('particlesJS', particlesJS)
     .constant('_', _)
     .constant('BACKEND', {

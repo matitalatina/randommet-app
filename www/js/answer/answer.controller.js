@@ -5,7 +5,7 @@
     .controller('AnswerCtrl', AnswerCtrl);
 
   /** @ngInject */
-  function AnswerCtrl(AnswerStorage, ListRandom, _, $scope, $translate, Counter) {
+  function AnswerCtrl(AnswerStorage, ListRandom, _, $scope, $translate, Counter, Vibrator, ShakeDetector) {
     var vm = this;
     var counterId = 'anwser';
     var animationTime = 500;
@@ -20,8 +20,10 @@
     });
 
     $scope.$on('$ionicView.beforeEnter', onStart);
+    $scope.$on('$ionicView.beforeLeave', onLeave);
 
     function onStart() {
+      ShakeDetector.addListener(onShake);
       Counter.reset(counterId);
       vm.ui.countNumber = Counter.get(counterId);
       if (vm.chooserControl.reset) {
@@ -33,12 +35,23 @@
     }
 
     function choose() {
+      Vibrator.vibrate(500);
       vm.list.then(function (list) {
         var label = ListRandom.choose(list).label;
         vm.chooserControl.show(label);
         vm.ui.countNumber = Counter.add(counterId);
       });
+    }
 
+    function onShake() {
+      $scope.$apply(function () {
+        choose();
+        Vibrator.vibrate();
+      });
+    }
+
+    function onLeave() {
+      ShakeDetector.removeListener(onShake);
     }
   }
 })();

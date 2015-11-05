@@ -5,10 +5,10 @@
     .controller('ListCtrl', ListCtrl);
 
   /** @ngInject */
-  function ListCtrl(ListStorage, Counter) {
+  function ListCtrl($scope, $state, ListStorage, Counter, Vibrator, ShakeDetector) {
     var vm = this;
     var counterId = 'list';
-    
+
     vm.ui = {
       editMode: false,
       showDelete: false
@@ -23,10 +23,23 @@
     vm.endEdit = endEdit;
     vm.addItem = addItem;
 
-    onStart();
+    $scope.$on('$ionicView.beforeEnter', onStart);
+    $scope.$on('$ionicView.beforeLeave', onLeave);
 
     function onStart() {
       vm.list = ListStorage.query();
+      ShakeDetector.addListener(onShake);
+    }
+
+    function onLeave() {
+      ShakeDetector.removeListener(onShake);
+    }
+
+    function onShake() {
+      $scope.$apply(function () {
+        $state.go('tab.list-choose');
+        Vibrator.vibrate();
+      });
     }
 
     function toggleDelete() {
@@ -53,7 +66,7 @@
       resetCounter();
       ListStorage.post(vm.list);
     }
-    
+
     function resetCounter() {
       Counter.reset(counterId);
     }
