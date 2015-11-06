@@ -35,7 +35,6 @@
     }
 
     function choose() {
-      Vibrator.vibrate(500);
       vm.list.then(function (list) {
         var label = ListRandom.choose(list).label;
         vm.chooserControl.show(label);
