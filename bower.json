@@ -2,7 +2,7 @@
   "name": "HelloIonic",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.1.0"
+    "ionic": "driftyco/ionic-bower#1.1.1"
   },
   "dependencies": {
     "font-awesome": "~4.4.0",
@@ -10,6 +10,12 @@
     "angular-translate": "~2.8.1",
     "underscore": "~1.8.3",
     "angular-local-storage": "~0.2.3",
-    "particles.js": "~2.0.0"
+    "particles.js": "~2.0.0",
+    "scrollreveal": "scrollReveal.js#~2.3.2",
+    "shake.js": "~1.2.2",
+    "angular-resource": "~1.4.8"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
   }
 }
