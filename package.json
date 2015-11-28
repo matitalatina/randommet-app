@@ -1,7 +1,10 @@
 {
-  "name": "randommet-app",
+  "name": "RandomMet",
   "version": "1.0.0",
-  "description": "randommet-app: An Ionic project",
+  "description": "Shuffle your life!",
+  "author": {
+    "name": "Mattia Natali"
+  },
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

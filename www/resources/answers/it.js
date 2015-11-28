@@ -2,7 +2,7 @@
 {"label": "Sì."},
 {"label": "Senza dubbio."},
 {"label": "Le mie fonti dicono no."},
-{"label": "Come la vedo io, sì."},
+{"label": "Per come la vedo io, sì."},
 {"label": "Puoi contarci."},
 {"label": "Concentrati e richiedilo."},
 {"label": "Le prospettive non sono così buone."},
