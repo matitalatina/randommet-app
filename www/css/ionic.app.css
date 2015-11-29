@@ -9092,6 +9092,13 @@ a.button {
 .bar-stable .button.assertive {
   color: #ef473a; }
 
+.row.about-links {
+  justify-content: center;
+  width: auto; }
+  .row.about-links .button.button-icon {
+    padding: 0.5em 1em;
+    color: white; }
+
 .item-add-animate.ng-enter {
   animation: fadeIn 0.5s; }
 
