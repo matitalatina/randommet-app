@@ -9,6 +9,7 @@
     var vm = this;
     $scope.$on('$ionicView.beforeEnter', onStart);
     vm.shareApp = shareApp;
+    vm.goToGithub = goToGithub
 
     function onStart() {
       window.sr = new scrollReveal({
@@ -22,6 +23,12 @@
           console.log(translations)
           window.plugins.socialsharing.share(decodeURIComponent(translations.ABOUT_SHARE_MESSAGE), decodeURIComponent(translations.ABOUT_SHARE_SUBJECT));
         });
+      }
+    }
+
+    function goToGithub() {
+      if (window.cordova) {
+        cordova.InAppBrowser.open('https://github.com/matitalatina/randommet-app', '_system');
       }
     }
   }
