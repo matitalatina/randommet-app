@@ -2,7 +2,7 @@
   <form class="bar bar-subheader item-input-inset" ng-if="!lc.ui.editMode" ng-submit="lc.addItem()">
     <label class="item-input-wrapper">
       <i class="icon"></i>
-      <input type="text" placeholder="{{'TABS_ITEM_NEW_PLACEHOLDER' | translate}}" ng-model="lc.newItem" ng-enter="lc.addItem()">
+      <input type="text" placeholder="{{'TABS_ITEM_NEW_PLACEHOLDER' | translate}}" ng-model="lc.newItem" ng-enter="lc.addItem()" id="new-item-input">
     </label>
     <button class="button button-icon icon ion-ios-plus-outline" type="button" ng-click="lc.addItem()" ng-disabled="!lc.newItem">
     </button>
@@ -10,7 +10,7 @@
   <form class="bar bar-subheader item-input-inset" ng-if="lc.ui.editMode" ng-submit="lc.endEdit()">
     <label class="item-input-wrapper">
       <i class="icon"></i>
-      <input type="text" placeholder="{{'TABS_ITEM_EDIT_PLACEHOLDER' | translate}}" ng-model="lc.selectedItem.label" ng-enter="lc.endEdit()">
+      <input type="text" placeholder="{{'TABS_ITEM_EDIT_PLACEHOLDER' | translate}}" ng-model="lc.selectedItem.label" ng-enter="lc.endEdit()" id="edit-item-input">
     </label>
     <button class="button button-icon icon ion-ios-checkmark-outline" ng-click="lc.endEdit()" type="button">
     </button>

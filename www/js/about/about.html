@@ -1,16 +1,16 @@
 <ion-view view-title="{{'ABOUT_TITLE' | translate}}">
   <ion-content scroll="false" class="padding font-big about-bg about" rm-particles style="position:absolute;">
     <div class="filler-center">
-      <div class="title-randommet">RandomMet</div>
-      <div data-sr="enter top, ease-out 50px, wait 0.5s, scale up 20%">Fatto con</div>
+      <div class="title-randommet" translate>APP_NAME</div>
+      <div data-sr="enter top, ease-out 50px, wait 0.5s, scale up 20%" translate>ABOUT_MADE_WITH</div>
       <div class="icon-ultra" data-sr="ease-out 50px, wait 0.8s, scale up 20%">
         <div class="icon ion-ios-heart heart-anim assertive"></div>
       </div>
-      <div style="font-size: 22px" data-sr="enter bottom, ease-out 50px, wait 1.2s, scale up 20%">da</div>
+      <div style="font-size: 22px" data-sr="enter bottom, ease-out 50px, wait 1.2s, scale up 20%" translate>ABOUT_BY</div>
       <div data-sr="enter bottom, ease-out 50px, wait 1.5s, scale up 20%">Mattia Natali</div>
       <div class="row about-links">
         <div class="col">
-          <a class="button button-icon icon ion-social-facebook" data-sr="enter bottom, ease-out 50px, wait 2s, scale up 20%" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Frandommet.altervista.org" target="_blank"></a>
+          <button type="button" class="button button-icon icon ion-share" data-sr="enter bottom, ease-out 50px, wait 2s, scale up 20%" ng-click="ac.shareApp()"></button>
         </div>
         <div class="col">
           <a class="button button-icon icon ion-social-github" data-sr="enter bottom, ease-out 50px, wait 2.2s, scale up 20%" href="https://github.com/matitalatina/randommet-app" target="_blank"></a>

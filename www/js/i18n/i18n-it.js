@@ -20,7 +20,11 @@
       LIST_CHOOSE_RECHOOSE: 'Riscegli',
       LIST_HELPER: 'Aggiungi gli elementi nella lista, RandomMet sceglierà l\'opzione migliore!',
       SETTINGS_ABOUT: 'Informazioni',
-      ABOUT_TITLE: 'Info'
+      ABOUT_TITLE: 'Info',
+      ABOUT_MADE_WITH: 'Fatto con',
+      ABOUT_BY: 'da',
+      ABOUT_SHARE_SUBJECT: 'RandomMet - Shuffle your life!',
+      ABOUT_SHARE_MESSAGE: 'RandomMet è disponibile sia su iOS che Android, cercala sullo store!'
     });
   }
 })();

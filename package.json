@@ -33,13 +33,16 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-x-socialsharing"
   ],
   "cordovaPlatforms": [
     {
       "platform": "ios",
       "version": "4.1.0",
       "locator": "ios@4.1.0"
-    }
+    },
+    "android"
   ]
 }

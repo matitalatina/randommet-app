@@ -5,7 +5,7 @@
     .controller('ListCtrl', ListCtrl);
 
   /** @ngInject */
-  function ListCtrl($scope, $state, ListStorage, Counter, Vibrator, ShakeDetector) {
+  function ListCtrl($scope, $state, ListStorage, Counter, Vibrator, ShakeDetector, document, $timeout) {
     var vm = this;
     var counterId = 'list';
 
@@ -80,6 +80,10 @@
         vm.newItem = '';
         saveList();
       }
+
+      $timeout(function () {
+        document.getElementById('new-item-input').focus()
+      }, false);
     }
   }
 })();

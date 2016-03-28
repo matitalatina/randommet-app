@@ -5,7 +5,7 @@
 
   /** @ngInject */
   function config($translateProvider) {
-    $translateProvider.useSanitizeValueStrategy('sanitize');
+    $translateProvider.useSanitizeValueStrategy('escape');
     $translateProvider.preferredLanguage('it');
   }
 })();
