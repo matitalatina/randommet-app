@@ -18,10 +18,61 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../fonts" !default;
 $fa-font-path: "../fonts";
+$time-animation: 0.3s;
+$animation-ease: ease-in-out;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@font-face {
+  font-family: 'Indie Flower';
+  src: url(../fonts/IndieFlower.ttf);
+}
+
 .bar-stable .button.assertive {
   color: $assertive;
+}
+
+.handwritten {
+  font-family: 'Indie Flower', cursive;
+  &.help {
+    color: rgba(#000, 0.2);
+    &.inverse {
+      color: rgba(#fff, 0.2);
+    }
+    margin-top: 20px;
+    text-align: center;
+    line-height: 1.8em;
+    font-size: 2em;
+    transform: rotate(-10deg);
+    max-width: 400px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  &.overlay-center {
+    justify-content: space-around;
+    align-items: center;
+  }
+  &.overlay-bottom {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &.overlay-top {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &.overlay-opaque {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  &.overlay-justify-center {
+    justify-content: center;
+  }
 }
 
 .row.about-links {
@@ -132,4 +183,32 @@ $fa-font-path: "../fonts";
   font-size: 40px;
   line-height: 45px;
   text-align: center;
+}
+
+
+/*** Animations ***/
+
+
+/* The starting CSS styles for the enter animation */
+
+.fade {
+  transition: $time-animation $animation-ease all;
+  -webkit-transition: $time-animation $animation-ease all;
+}
+
+
+/* The finishing CSS styles for the enter animation */
+
+.fade.ng-enter.ng-enter-active,
+.fade.ng-leave {
+  opacity: 1;
+}
+
+
+/* now the element will fade out before it is removed from the DOM */
+
+.fade.ng-enter,
+.fade.ng-leave.ng-leave-active,
+.fade.ng-hide {
+  opacity: 0;
 }

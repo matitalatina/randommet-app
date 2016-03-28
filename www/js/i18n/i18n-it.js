@@ -14,9 +14,11 @@
       TABS_SETTINGS: 'Impostazioni',
       TABS_ANSWER_TITLE: 'Oracolo',
       ANSWER_ASK: 'Rispondi',
+      ANSWER_HELPER: 'Pensa ad una domanda, poi premi "Rispondi" per sapere la risposta.',
       CHOOSE: 'Scegli',
       LIST_CHOOSE_TITLE: 'Scelta',
       LIST_CHOOSE_RECHOOSE: 'Riscegli',
+      LIST_HELPER: 'Aggiungi gli elementi nella lista, RandomMet sceglierà l\'opzione migliore!',
       SETTINGS_ABOUT: 'Informazioni',
       ABOUT_TITLE: 'Info'
     });

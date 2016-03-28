@@ -34,5 +34,8 @@
         </ion-delete-button>
       </ion-item>
     </ion-list>
+    <div class="overlay overlay-center fade" ng-if="lc.list.length == 0">
+      <span translate class="handwritten help">LIST_HELPER</span>
+    </div>
   </ion-content>
 </ion-view>

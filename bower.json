@@ -1,8 +1,8 @@
 {
-  "name": "HelloIonic",
+  "name": "Randommet",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.1.1"
+    "ionic": "driftyco/ionic-bower#1.2.4"
   },
   "dependencies": {
     "font-awesome": "~4.4.0",
@@ -11,11 +11,11 @@
     "underscore": "~1.8.3",
     "angular-local-storage": "~0.2.3",
     "particles.js": "~2.0.0",
-    "scrollreveal": "scrollReveal.js#~2.3.2",
+    "scrollreveal": "~2.3.2",
     "shake.js": "~1.2.2",
     "angular-resource": "~1.4.8"
   },
   "resolutions": {
-    "angular": "1.4.8"
+    "angular": "1.4.10"
   }
 }

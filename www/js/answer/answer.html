@@ -9,5 +9,8 @@
   </ion-nav-buttons>
   <ion-content scroll="false" rm-particles class="dark-magic">
     <rm-chooser-label data-control="ac.chooserControl"></rm-chooser-label>
+    <div class="overlay overlay-center fade" ng-if="ac.ui.countNumber == 0">
+      <span translate class="handwritten help inverse">ANSWER_HELPER</span>
+    </div>
   </ion-content>
 </ion-view>
